@@ -1,0 +1,15 @@
+/Users/homeland/RiderProjects/OOPPractice/OOPPractice/bin/Debug/net7.0/OOPPractice
+/Users/homeland/RiderProjects/OOPPractice/OOPPractice/bin/Debug/net7.0/OOPPractice.deps.json
+/Users/homeland/RiderProjects/OOPPractice/OOPPractice/bin/Debug/net7.0/OOPPractice.runtimeconfig.json
+/Users/homeland/RiderProjects/OOPPractice/OOPPractice/bin/Debug/net7.0/OOPPractice.dll
+/Users/homeland/RiderProjects/OOPPractice/OOPPractice/bin/Debug/net7.0/OOPPractice.pdb
+/Users/homeland/RiderProjects/OOPPractice/OOPPractice/obj/Debug/net7.0/OOPPractice.csproj.AssemblyReference.cache
+/Users/homeland/RiderProjects/OOPPractice/OOPPractice/obj/Debug/net7.0/OOPPractice.GeneratedMSBuildEditorConfig.editorconfig
+/Users/homeland/RiderProjects/OOPPractice/OOPPractice/obj/Debug/net7.0/OOPPractice.AssemblyInfoInputs.cache
+/Users/homeland/RiderProjects/OOPPractice/OOPPractice/obj/Debug/net7.0/OOPPractice.AssemblyInfo.cs
+/Users/homeland/RiderProjects/OOPPractice/OOPPractice/obj/Debug/net7.0/OOPPractice.csproj.CoreCompileInputs.cache
+/Users/homeland/RiderProjects/OOPPractice/OOPPractice/obj/Debug/net7.0/OOPPractice.dll
+/Users/homeland/RiderProjects/OOPPractice/OOPPractice/obj/Debug/net7.0/refint/OOPPractice.dll
+/Users/homeland/RiderProjects/OOPPractice/OOPPractice/obj/Debug/net7.0/OOPPractice.pdb
+/Users/homeland/RiderProjects/OOPPractice/OOPPractice/obj/Debug/net7.0/OOPPractice.genruntimeconfig.cache
+/Users/homeland/RiderProjects/OOPPractice/OOPPractice/obj/Debug/net7.0/ref/OOPPractice.dll
