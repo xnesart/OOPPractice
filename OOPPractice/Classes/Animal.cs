@@ -1,28 +1,76 @@
 namespace OOPPractice.Classes;
 
-public class Animal
+public abstract class Animal
 {
+    private string _type;
 
-    
-    public string _type;
-    public string _biome;
-    public int _square;
-    public string _eat;
-    public bool _isPredator;
-    public string _sound;
-    public string _name;
-    public void GetEat(string food)
+    public string Type
     {
-        Console.WriteLine($"{_name} поел {food}");
-    }
-    public void DoSound(string sound)
-    {
-        Console.WriteLine($"{_name} издал {sound}");
+        get => _type;
+        protected set => _type = value;
     }
 
-    public void Play()
+    private string _biome;
+
+    public string Biome
     {
-        Console.WriteLine($"{_name} поиграл");
+        get => _biome;
+        protected set => _biome = value;
+    }
+
+    private string _square;
+
+    public string Square
+    {
+        get => _square;
+        protected set => _square = value;
+    }
+
+    private string _eat;
+    private bool _isPredator;
+
+    public bool IsPredator
+    {
+        get => _isPredator;
+        protected set => _isPredator = value;
+    }
+
+    protected string _sound;
+    public string Sound;
+    private string _name;
+
+    public string Name
+    {
+        get => _name;
+        protected set => _name = value;
+    }
+
+    public Animal()
+    {
+    }
+
+    public Animal(string name, string type)
+    {
+        Type = type;
+        if (Type == "слон")
+            Biome = "пустыня";
+        else if (Type == "пингвин")
+            Biome = "тундра";
+        else if (Type == "тигр")
+            Biome = "тропики";
+        else
+            throw new ArgumentException("введите: слон, пингвин или тигр");
+    }
+
+    public virtual void GetEat(string food)
+    {
+    }
+
+    public virtual void DoSound()
+    {
+    }
+
+    public virtual void Play()
+    {
     }
 }
-
