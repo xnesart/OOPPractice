@@ -10,7 +10,7 @@ public class ElefantTests
     [TestCase(false,"рыба и мясо")]
     public void GetEatTests(bool expected, string food)
     {
-        Elefant elefant = new Elefant("Миша");
+        Elefant elefant = new Elefant("Миша","пустыня","слон","10 квадратных метров");
         elefant.GetEat(food);
         bool actual = elefant.IsSatisfied;
         Assert.AreEqual(expected,actual);

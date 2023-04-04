@@ -2,9 +2,32 @@ namespace OOPPractice.Classes;
 
 public class Penguin : Animal
 {
-    public bool IsSatisfied { get; private set; }
     public string Name { get; private set; }
-
+    
+    public string Type
+    {
+        get;
+        protected set;
+    }
+    
+    public string Square
+    {
+        get;
+        protected set;
+    }
+    
+    public string Biome
+    {
+        get;
+        protected set;
+    }
+    
+    public bool IsSatisfied
+    {
+        get;
+        private set;
+    }
+    
     private string _sound = "хрю";
 
     public string Sound
@@ -13,12 +36,13 @@ public class Penguin : Animal
         private set => _sound = value;
     }
 
-    public Penguin(string name)
+    public Penguin(string name, string biome, string type, string square)
     {
         Name = name;
-        Biome = "тундра";
-        Type = "пингвин";
-        Square = "10 квадратных метров";
+        Biome = biome;
+        Type = type;
+        Square = square;
+        IsSatisfied = false;
     }
 
     public override void GetEat(string food)

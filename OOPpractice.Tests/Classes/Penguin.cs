@@ -10,7 +10,7 @@ public class PenguinTests
     [TestCase(true,"рыба и мясо")]
     public void GetEatTests(bool expected, string food)
     {
-        Penguin penguin = new Penguin("Миша");
+        Penguin penguin = new Penguin("Симба","тундра","пингвин","10 квадратных метров");
         penguin.GetEat(food);
         bool actual = penguin.IsSatisfied;
         Assert.AreEqual(expected,actual);

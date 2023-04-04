@@ -2,23 +2,46 @@ namespace OOPPractice.Classes;
 
 public class Elefant : Animal
 {
-    private bool _isSatisfied;
-
+    public string Name { get; private set; }
+    
     public bool IsSatisfied
     {
-        get => _isSatisfied;
-        private set => _isSatisfied = value;
+        get;
+        private set;
+    }
+    
+    public bool IsPredator
+    {
+        get;
+        protected set;
+    }
+    
+    public string Square
+    {
+        get;
+        protected set;
+    }
+    
+    public string Type
+    {
+        get;
+        protected set;
+    }
+    
+    public string Biome
+    {
+        get;
+        protected set;
     }
 
-    public string Name { get; private set; }
-
-    public Elefant(string name)
+    public Elefant(string name, string biome, string type, string square)
     {
         Name = name;
-        Biome = "пустыня";
-        Type = "слон";
-        Square = "10 квадратных метров";
-        _isSatisfied = false;
+        Biome = biome;
+        Type = type;
+        Square = square;
+        IsSatisfied = false;
+        IsPredator = false;
     }
 
     private string _sound = "ауф";
@@ -39,17 +62,17 @@ public class Elefant : Animal
         if (food == "мясо" || food == "рыба" || food == "рыба и мясо" || food == "мясо и рыба")
         {
             Console.WriteLine($"{Name} не стал есть эту еду");
-            _isSatisfied = false;
+            IsSatisfied = false;
         }
         else if (food == "фрукты")
         {
             Console.WriteLine($"{Name} поел");
-            _isSatisfied = true;
+            IsSatisfied = true;
         }
         else
         {
             Console.WriteLine($"{Name} такое не ест");
-            _isSatisfied = false;
+            IsSatisfied = false;
         }
     }
 

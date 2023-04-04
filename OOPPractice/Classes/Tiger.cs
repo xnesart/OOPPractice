@@ -2,23 +2,41 @@ namespace OOPPractice.Classes;
 
 public class Tiger : Animal
 {
-    public bool IsSatisfied { get; private set; }
     public string Name { get; private set; }
-
-    private string _sound = "рррр";
-
-    public string Sound
+    
+    public bool IsSatisfied { get; private set; }
+    
+    public string Type
     {
-        get => _sound;
-        private set => _sound = value;
+        get;
+        protected set;
     }
 
-    public Tiger(string name)
+    public string Biome
+    {
+        get;
+        protected set;
+    }
+    
+    public string Square
+    {
+        get;
+        protected set;
+    }
+    
+    public string Sound
+    {
+        get;
+        protected set;
+    }
+
+    public Tiger(string name, string biome, string type, string square)
     {
         Name = name;
-        Biome = "тропики";
-        Type = "тигр";
-        Square = "10 квадратных метров";
+        Biome = biome;
+        Type = type;
+        Square = square;
+        Sound = "рррр";
     }
 
     public override void DoSound()
