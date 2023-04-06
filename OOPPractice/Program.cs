@@ -19,14 +19,14 @@ full = elefant.IsSatisfied;
 elefant.Play();
 Console.WriteLine(full);
 
-Tiger tiger = new Tiger("Матильда","тропики", "тигр", "10 квадратных метров");
+Tiger tiger = new Tiger("Матильда", "тропики", "тигр", "10 квадратных метров");
 tiger.GetEat("мясо");
 tiger.DoSound();
 full = tiger.IsSatisfied;
 tiger.Play();
 Console.WriteLine(full);
 
-Penguin penguin = new("Петя","тундра", "пингвин", "10 квадратных метров");
+Penguin penguin = new("Петя", "тундра", "пингвин", "10 квадратных метров");
 penguin.GetEat("мясо");
 penguin.DoSound();
 full = penguin.IsSatisfied;

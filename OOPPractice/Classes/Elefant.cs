@@ -2,37 +2,17 @@ namespace OOPPractice.Classes;
 
 public class Elefant : Animal
 {
-    public string Name { get; private set; }
-    
-    public bool IsSatisfied
-    {
-        get;
-        private set;
-    }
-    
-    public bool IsPredator
-    {
-        get;
-        protected set;
-    }
-    
-    public string Square
-    {
-        get;
-        protected set;
-    }
-    
-    public string Type
-    {
-        get;
-        protected set;
-    }
-    
-    public string Biome
-    {
-        get;
-        protected set;
-    }
+    public override string Name { get; protected set; }
+
+    public override bool IsSatisfied { get; protected set; }
+
+    public override bool IsPredator { get; protected set; }
+
+    public override string Square { get; protected set; }
+
+    public override string Type { get; protected set; }
+
+    public override string Biome { get; protected set; }
 
     public Elefant(string name, string biome, string type, string square)
     {
