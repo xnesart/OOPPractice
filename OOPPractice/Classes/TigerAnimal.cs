@@ -1,29 +1,17 @@
 namespace OOPPractice.Classes;
 
-public class Tiger : Animal
+public class TigerAnimal : AbstractAnimal
 {
-    public override string Name { get; protected set; }
-
-    public override bool IsSatisfied { get; protected set; }
-    
-    public override bool IsPredator { get; protected set; }
-
-    public override string Type { get; protected set; }
-
-    public override string Biome { get; protected set; }
-
-    public override string Square { get; protected set; }
-
-    public string Sound { get; protected set; }
-
-    public Tiger(string name, string biome, string type, string square)
+    public TigerAnimal(string name)
     {
         Name = name;
-        Biome = biome;
-        Type = type;
-        Square = square;
-        Sound = "рррр";
+        Biome = "тропики";
+        Type = "тигр";
+        Square = "20 метров^2";
+        IsSatisfied = false;
+        Sound = "ррр";
         IsPredator = true;
+        Possibility = "крайне активен, хорошо слышит, видит и чует";
     }
 
     public override void DoSound()
@@ -53,5 +41,10 @@ public class Tiger : Animal
     public override void Play()
     {
         Console.WriteLine($"{Name} поиграл");
+    }
+
+    public override void PlayWithRelatives(string relative)
+    {
+        Console.WriteLine($"{Name} поиграл с {relative}");
     }
 }

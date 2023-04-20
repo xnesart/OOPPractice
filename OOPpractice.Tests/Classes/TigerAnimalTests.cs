@@ -10,9 +10,9 @@ public class TigerTests
     [TestCase(true,"рыба и мясо")]
     public void GetEatTests(bool expected, string food)
     {
-        Tiger tiger = new Tiger("Миша","пустыня","слон","10 квадратных метров");
-        tiger.GetEat(food);
-         bool actual = tiger.IsSatisfied;
+        TigerAnimal tigerAnimal = new TigerAnimal("Миша");
+        tigerAnimal.GetEat(food);
+         bool actual = tigerAnimal.IsSatisfied;
          Assert.AreEqual(expected,actual);
     }
 }

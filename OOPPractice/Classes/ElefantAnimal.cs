@@ -1,35 +1,17 @@
 namespace OOPPractice.Classes;
 
-public class Elefant : Animal
+public class ElefantAnimal : AbstractAnimal
 {
-    public override string Name { get; protected set; }
-
-    public override bool IsSatisfied { get; protected set; }
-
-    public override bool IsPredator { get; protected set; }
-
-    public override string Square { get; protected set; }
-
-    public override string Type { get; protected set; }
-
-    public override string Biome { get; protected set; }
-
-    public Elefant(string name, string biome, string type, string square)
+    public ElefantAnimal(string name)
     {
         Name = name;
-        Biome = biome;
-        Type = type;
-        Square = square;
+        Biome = "саванна";
+        Type = "слон";
+        Square = "20 метров^2";
         IsSatisfied = false;
+        Sound = "уууу";
         IsPredator = false;
-    }
-
-    private string _sound = "ауф";
-
-    public string Sound
-    {
-        get => _sound;
-        private set => _sound = value;
+        Possibility = "умеет дружить";
     }
 
     public override void DoSound()
@@ -59,5 +41,10 @@ public class Elefant : Animal
     public override void Play()
     {
         Console.WriteLine($"{Name} поиграл");
+    }
+
+    public override void PlayWithRelatives(string relative)
+    {
+        Console.WriteLine($"{Name} поиграл с {relative}");
     }
 }

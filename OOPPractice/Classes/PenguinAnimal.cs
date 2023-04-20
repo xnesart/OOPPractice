@@ -1,34 +1,17 @@
 namespace OOPPractice.Classes;
 
-public class Penguin : Animal
+public class PenguinAnimal : AbstractAnimal
 {
-    public override string Name { get; protected set; }
-
-    public override string Type { get; protected set; }
-
-    public override bool IsPredator { get; protected set; }
-    public override string Square { get; protected set; }
-
-    public override string Biome { get; protected set; }
-
-    public override bool IsSatisfied { get; protected set; }
-
-    private string _sound = "хрю";
-
-    public string Sound
-    {
-        get => _sound;
-        private set => _sound = value;
-    }
-
-    public Penguin(string name, string biome, string type, string square)
+    public PenguinAnimal(string name)
     {
         Name = name;
-        Biome = biome;
-        Type = type;
-        Square = square;
+        Biome = "ледник";
+        Type = "пингвин";
+        Square = "20 метров^2";
         IsSatisfied = false;
+        Sound = "кря-кря";
         IsPredator = true;
+        Possibility = "умеет различать слова, состоящие из 2х-3х слогов";
     }
 
     public override void GetEat(string food)
@@ -58,5 +41,10 @@ public class Penguin : Animal
     public override void Play()
     {
         Console.WriteLine($"{Name} поиграл");
+    }
+
+    public override void PlayWithRelatives(string relative)
+    {
+        Console.WriteLine($"{Name} поиграл с {relative}");
     }
 }

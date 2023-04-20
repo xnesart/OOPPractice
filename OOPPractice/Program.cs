@@ -11,25 +11,49 @@
 // Издать звук
 // Играть
 
-Elefant elefant = new Elefant("Тима", "пустыня", "слон", "10 квадратных метров");
-bool full = elefant.IsSatisfied;
-elefant.GetEat("фрукты");
-elefant.DoSound();
-full = elefant.IsSatisfied;
-elefant.Play();
+ElefantAnimal elefantAnimal = new ElefantAnimal("Тима");
+bool full = elefantAnimal.IsSatisfied;
+elefantAnimal.GetEat("фрукты");
+elefantAnimal.DoSound();
+full = elefantAnimal.IsSatisfied;
+elefantAnimal.Play();
 Console.WriteLine(full);
 
-Tiger tiger = new Tiger("Матильда", "тропики", "тигр", "10 квадратных метров");
-tiger.GetEat("мясо");
-tiger.DoSound();
-full = tiger.IsSatisfied;
-tiger.Play();
+TigerAnimal tigerAnimal = new TigerAnimal("Матильда");
+tigerAnimal.GetEat("мясо");
+tigerAnimal.DoSound();
+full = tigerAnimal.IsSatisfied;
+tigerAnimal.Play();
 Console.WriteLine(full);
 
-Penguin penguin = new("Петя", "тундра", "пингвин", "10 квадратных метров");
-penguin.GetEat("мясо");
-penguin.DoSound();
-full = penguin.IsSatisfied;
-penguin.Play();
+SeagullAnimal seagullAnimal = new SeagullAnimal("Иля");
+seagullAnimal.GetEat("рыба");
+seagullAnimal.DoSound();
+full = seagullAnimal.IsSatisfied;
+seagullAnimal.Play();
+seagullAnimal.PlayWithRelatives("птенцы");
+Console.WriteLine(full);
+
+SlothAnimal slothAnimal = new SlothAnimal("Сёма");
+slothAnimal.GetEat("фрукты");
+slothAnimal.DoSound();
+full = slothAnimal.IsSatisfied;
+slothAnimal.Play();
+slothAnimal.PlayWithRelatives("детеныш");
+Console.WriteLine(full);
+
+GoatAnimal goatAnimal = new GoatAnimal("Репка");
+goatAnimal.GetEat("растения");
+goatAnimal.DoSound();
+full = goatAnimal.IsSatisfied;
+goatAnimal.Play();
+goatAnimal.PlayWithRelatives("козлята");
+Console.WriteLine(full);
+
+PenguinAnimal penguinAnimal = new("Петя");
+penguinAnimal.GetEat("мясо");
+penguinAnimal.DoSound();
+full = penguinAnimal.IsSatisfied;
+penguinAnimal.Play();
 Console.WriteLine(full);
 Console.Read();
