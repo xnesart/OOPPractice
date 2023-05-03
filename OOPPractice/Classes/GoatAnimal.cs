@@ -5,15 +5,32 @@ public class GoatAnimal : AbstractAnimal
     public GoatAnimal(string name)
     {
         Name = name;
-        Biome = "поля";
+        Biome = "джунгли";
         Type = "коза";
         Square = "20 метров^2";
         IsSatisfied = false;
         Sound = "мееее";
         IsPredator = false;
+        Food = "растения или фрукты";
         Possibility = "умеет предупреждать сородичей об опасности, меняя тон крика";
     }
 
+    protected override void Eating(string food)
+    {
+        Random rnd = new Random();
+        SatisfiedInPercent = rnd.Next(1, 100);
+        if (SatisfiedInPercent >= 30)
+        {
+            Console.WriteLine($"{Name} поел(а)");
+            IsSatisfied = true;
+        }
+        else
+        {
+            IsSatisfied = false;
+            Console.WriteLine($"{Name}: Покорми меня ещё, я сыт на {SatisfiedInPercent}%");
+        }
+    }
+    
     public override void GetEat(string food)
     {
         if (food == "мясо" || food == "рыба" || food == "рыба и мясо" || food == "мясо и рыба")
@@ -23,8 +40,7 @@ public class GoatAnimal : AbstractAnimal
         }
         else if (food == "фрукты" || food == "растения")
         {
-            Console.WriteLine($"{Name} поела");
-            IsSatisfied = true;
+           Eating(food);
         }
         else
         {

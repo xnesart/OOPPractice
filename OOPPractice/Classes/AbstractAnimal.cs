@@ -5,6 +5,8 @@ public abstract class AbstractAnimal
     public string Name { get; protected set; }
 
     public bool IsSatisfied { get; protected set; }
+    
+    public int SatisfiedInPercent { get; set; }
 
     public bool IsPredator { get; protected set; }
 
@@ -16,6 +18,8 @@ public abstract class AbstractAnimal
 
     public string Sound { get; protected set; }
 
+    public string Food { get; protected set; }
+
     public string Possibility { get; protected set; }
 
     public AbstractAnimal()
@@ -23,6 +27,7 @@ public abstract class AbstractAnimal
     }
 
     public abstract void GetEat(string food);
+    protected abstract void Eating(string food);
     public abstract void DoSound();
     public abstract void Play();
 

@@ -5,13 +5,30 @@ public class ElefantAnimal : AbstractAnimal
     public ElefantAnimal(string name)
     {
         Name = name;
-        Biome = "саванна";
+        Biome = "пустыня";
         Type = "слон";
         Square = "20 метров^2";
         IsSatisfied = false;
         Sound = "уууу";
         IsPredator = false;
+        Food = "растения или фрукты";
         Possibility = "умеет дружить";
+    }
+
+    protected override void Eating(string food)
+    {
+        Random rnd = new Random();
+        SatisfiedInPercent = rnd.Next(1, 100);
+        if (SatisfiedInPercent >= 30)
+        {
+            Console.WriteLine($"{Name} поел(а)");
+            IsSatisfied = true;
+        }
+        else
+        {
+            IsSatisfied = false;
+            Console.WriteLine($"{Name}: Покорми меня ещё, я сыт на {SatisfiedInPercent}%");
+        }
     }
 
     public override void DoSound()
@@ -23,13 +40,12 @@ public class ElefantAnimal : AbstractAnimal
     {
         if (food == "мясо" || food == "рыба" || food == "рыба и мясо" || food == "мясо и рыба")
         {
-            Console.WriteLine($"{Name} не стал есть эту еду");
+            Console.WriteLine($"{Name} не стал(а) есть эту еду");
             IsSatisfied = false;
         }
         else if (food == "фрукты")
         {
-            Console.WriteLine($"{Name} поел");
-            IsSatisfied = true;
+            Eating(food);
         }
         else
         {
@@ -37,6 +53,8 @@ public class ElefantAnimal : AbstractAnimal
             IsSatisfied = false;
         }
     }
+
+
 
     public override void Play()
     {

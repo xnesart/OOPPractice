@@ -11,9 +11,25 @@ public class SlothAnimal : AbstractAnimal
         IsSatisfied = false;
         Sound = "отстань, я сплю";
         IsPredator = false;
+        Food = "растения или фрукты";
         Possibility = "умеет экономить ресурсы и распределять задачи";
     }
 
+    protected override void Eating(string food)
+    {
+        Random rnd = new Random();
+        SatisfiedInPercent = rnd.Next(1, 100);
+        if (SatisfiedInPercent >= 30)
+        {
+            Console.WriteLine($"{Name} поел(а)");
+            IsSatisfied = true;
+        }
+        else
+        {
+            IsSatisfied = false;
+            Console.WriteLine($"{Name}: Покорми меня ещё, я сыт на {SatisfiedInPercent}%");
+        }
+    }
     public override void GetEat(string food)
     {
         if (food == "мясо" || food == "рыба" || food == "рыба и мясо" || food == "мясо и рыба")
@@ -23,8 +39,7 @@ public class SlothAnimal : AbstractAnimal
         }
         else if (food == "фрукты" || food == "растения")
         {
-            Console.WriteLine($"{Name} поел");
-            IsSatisfied = true;
+            Eating(food);
         }
         else
         {

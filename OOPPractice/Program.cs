@@ -11,56 +11,43 @@
 // Издать звук
 // Играть
 
-// List<object> aviaryList = new List<object>();
 
-Aviary aviaryDesert = new Aviary("пустынные животные","пустыня","20 квадратных метров", false);
-AbstractAnimal elefantAnimal;
-elefantAnimal = new ElefantAnimal("Тима");
-aviaryDesert.AddAnimalInList(elefantAnimal);
+Aviary aviaryDesertHerbivore = new Aviary("пустынные животные","пустыня","20 квадратных метров", false);
+aviaryDesertHerbivore.AddAnimalInAviary(new ElefantAnimal("Куро"));
+aviaryDesertHerbivore.AddAnimalInAviary(new ElefantAnimal("Тимоша"));
+aviaryDesertHerbivore.AddAnimalInAviary(new TigerAnimal("Пима"));
+aviaryDesertHerbivore.ShowAnimals();
+aviaryDesertHerbivore.CheckAnimalSatisfied(); 
+aviaryDesertHerbivore.AnimalsFeedInAviary("фрукты");
+aviaryDesertHerbivore.CheckAnimalSatisfied();
+aviaryDesertHerbivore.AnimalsDoSound();
 
-aviaryDesert.ShowAnimals();
+Aviary aviaryJunglePredators = new Aviary("тропический вольер","джунгли","20 квадратных метров", true);
+aviaryJunglePredators.AddAnimalInAviary(new TigerAnimal("Пима"));
+aviaryJunglePredators.AddAnimalInAviary(new TigerAnimal("Сима"));
+aviaryJunglePredators.ShowAnimals();
+aviaryJunglePredators.CheckAnimalSatisfied(); 
+aviaryJunglePredators.AnimalsFeedInAviary("мясо");
+aviaryJunglePredators.CheckAnimalSatisfied();
+aviaryJunglePredators.AnimalsDoSound();
 
-//List<AbstractAnimal> animals = new List<AbstractAnimal>();
+Aviary aviaryJungleHerbivore = new Aviary("тропический вольер","джунгли","20 квадратных метров", false);
+aviaryJungleHerbivore.AddAnimalInAviary(new SlothAnimal("Ленивц"));
+aviaryJungleHerbivore.AddAnimalInAviary(new SlothAnimal("Семён"));
+aviaryJungleHerbivore.AddAnimalInAviary(new GoatAnimal("Козовская"));
+aviaryJungleHerbivore.ShowAnimals();
+aviaryJungleHerbivore.CheckAnimalSatisfied(); 
+aviaryJungleHerbivore.AnimalsFeedInAviary("фрукты");
+aviaryJungleHerbivore.CheckAnimalSatisfied();
+aviaryJungleHerbivore.AnimalsDoSound();
 
 
-//aviary.AddAnimalInAviary(elefantAnimal);
-//aviary.ShowAnimals(aviary);
+Aviary aviaryGlacier = new Aviary("холодный вольер", "ледник", "20 квадратных метров", true);
+aviaryGlacier.AddAnimalInAviary(new SeagullAnimal("Чайковская"));
+aviaryGlacier.AddAnimalInAviary(new PenguinAnimal("Пингивнский"));
+aviaryGlacier.ShowAnimals();
+aviaryGlacier.CheckAnimalSatisfied();
+aviaryGlacier.AnimalsFeedInAviary("рыба и мясо");
 
-// TigerAnimal tigerAnimal = new TigerAnimal("Матильда");
-// tigerAnimal.GetEat("мясо");
-// tigerAnimal.DoSound();
-// bool full = tigerAnimal.IsSatisfied;
-// tigerAnimal.Play();
-// Console.WriteLine(full);
-//
-// SeagullAnimal seagullAnimal = new SeagullAnimal("Иля");
-// seagullAnimal.GetEat("рыба");
-// seagullAnimal.DoSound();
-// full = seagullAnimal.IsSatisfied;
-// seagullAnimal.Play();
-// seagullAnimal.PlayWithRelatives("птенцы");
-// Console.WriteLine(full);
-//
-// SlothAnimal slothAnimal = new SlothAnimal("Сёма");
-// slothAnimal.GetEat("фрукты");
-// slothAnimal.DoSound();
-// full = slothAnimal.IsSatisfied;
-// slothAnimal.Play();
-// slothAnimal.PlayWithRelatives("детеныш");
-// Console.WriteLine(full);
-//
-// GoatAnimal goatAnimal = new GoatAnimal("Репка");
-// goatAnimal.GetEat("растения");
-// goatAnimal.DoSound();
-// full = goatAnimal.IsSatisfied;
-// goatAnimal.Play();
-// goatAnimal.PlayWithRelatives("козлята");
-// Console.WriteLine(full);
-//
-// PenguinAnimal penguinAnimal = new("Петя");
-// penguinAnimal.GetEat("мясо");
-// penguinAnimal.DoSound();
-// full = penguinAnimal.IsSatisfied;
-// penguinAnimal.Play();
-// Console.WriteLine(full);
+
 Console.Read();

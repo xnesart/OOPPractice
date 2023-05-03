@@ -11,7 +11,23 @@ public class PenguinAnimal : AbstractAnimal
         IsSatisfied = false;
         Sound = "кря-кря";
         IsPredator = true;
+        Food = "мясо или рыба";
         Possibility = "умеет различать слова, состоящие из 2х-3х слогов";
+    }
+    protected override void Eating(string food)
+    {
+        Random rnd = new Random();
+        SatisfiedInPercent = rnd.Next(1, 100);
+        if (SatisfiedInPercent >= 30)
+        {
+            Console.WriteLine($"{Name} поел(а)");
+            IsSatisfied = true;
+        }
+        else
+        {
+            IsSatisfied = false;
+            Console.WriteLine($"{Name}: Покорми меня ещё, я сыт на {SatisfiedInPercent}%");
+        }
     }
 
     public override void GetEat(string food)
@@ -23,8 +39,7 @@ public class PenguinAnimal : AbstractAnimal
         }
         else if (food == "мясо" || food == "рыба" || food == "рыба и мясо" || food == "мясо и рыба")
         {
-            Console.WriteLine($"{Name} поел");
-            IsSatisfied = true;
+            Eating(food);
         }
         else
         {
