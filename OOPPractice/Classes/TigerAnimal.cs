@@ -7,12 +7,13 @@ public class TigerAnimal : AbstractAnimal
         Name = name;
         Biome = "джунгли";
         Type = "тигр";
-        Square = "20 метров^2";
+        Square = 20;
         IsSatisfied = false;
         Sound = "ррр";
         IsPredator = true;
         Food = "мясо или рыба";
         Possibility = "крайне активен, хорошо слышит, видит и чует";
+        FoodBowlInPercent = 100;
     }
 
     public override void DoSound()
@@ -45,7 +46,15 @@ public class TigerAnimal : AbstractAnimal
         }
         else if (food == "мясо" || food == "рыба" || food == "рыба и мясо" || food == "мясо и рыба")
         {
-            Eating(food);
+            if (FoodBowlInPercent > 15)
+            {
+                Eating(food);
+                FoodBowlInPercent -= 15;
+            }
+            else
+            {
+                Console.WriteLine("наполни мою миску!");
+            }
         }
         else
         {

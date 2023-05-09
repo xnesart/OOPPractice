@@ -7,14 +7,14 @@ public class SlothAnimal : AbstractAnimal
         Name = name;
         Biome = "джунгли";
         Type = "ленивец";
-        Square = "20 метров^2";
+        Square = 20;
         IsSatisfied = false;
         Sound = "отстань, я сплю";
         IsPredator = false;
         Food = "растения или фрукты";
         Possibility = "умеет экономить ресурсы и распределять задачи";
+        FoodBowlInPercent = 100;
     }
-
     protected override void Eating(string food)
     {
         Random rnd = new Random();
@@ -39,7 +39,15 @@ public class SlothAnimal : AbstractAnimal
         }
         else if (food == "фрукты" || food == "растения")
         {
-            Eating(food);
+            if (FoodBowlInPercent > 15)
+            {
+                Eating(food);
+                FoodBowlInPercent -= 15;
+            }
+            else
+            {
+                Console.WriteLine("наполни мою миску!");
+            }
         }
         else
         {
@@ -47,17 +55,14 @@ public class SlothAnimal : AbstractAnimal
             IsSatisfied = false;
         }
     }
-
     public override void DoSound()
     {
         Console.WriteLine($"{Name} сообщил: {Sound}");
     }
-
     public override void Play()
     {
         Console.WriteLine($"{Name} поиграл");
     }
-
     public override void PlayWithRelatives(string relative)
     {
         Console.WriteLine($"{Name} поиграл с {relative}");

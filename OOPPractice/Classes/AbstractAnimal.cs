@@ -10,7 +10,7 @@ public abstract class AbstractAnimal
 
     public bool IsPredator { get; protected set; }
 
-    public string Square { get; protected set; }
+    public int Square { get; protected set; }
 
     public string Type { get; protected set; }
 
@@ -21,15 +21,12 @@ public abstract class AbstractAnimal
     public string Food { get; protected set; }
 
     public string Possibility { get; protected set; }
-
-    public AbstractAnimal()
-    {
-    }
-
+    
+    public int FoodBowlInPercent { get; set; }
+    
     public abstract void GetEat(string food);
     protected abstract void Eating(string food);
     public abstract void DoSound();
     public abstract void Play();
-
     public abstract void PlayWithRelatives(string relative);
 }

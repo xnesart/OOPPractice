@@ -7,12 +7,13 @@ public class PenguinAnimal : AbstractAnimal
         Name = name;
         Biome = "ледник";
         Type = "пингвин";
-        Square = "20 метров^2";
+        Square = 20;
         IsSatisfied = false;
         Sound = "кря-кря";
         IsPredator = true;
         Food = "мясо или рыба";
         Possibility = "умеет различать слова, состоящие из 2х-3х слогов";
+        FoodBowlInPercent = 100;
     }
     protected override void Eating(string food)
     {
@@ -29,7 +30,6 @@ public class PenguinAnimal : AbstractAnimal
             Console.WriteLine($"{Name}: Покорми меня ещё, я сыт на {SatisfiedInPercent}%");
         }
     }
-
     public override void GetEat(string food)
     {
         if (food == "фрукты")
@@ -39,7 +39,15 @@ public class PenguinAnimal : AbstractAnimal
         }
         else if (food == "мясо" || food == "рыба" || food == "рыба и мясо" || food == "мясо и рыба")
         {
-            Eating(food);
+            if (FoodBowlInPercent > 15)
+            {
+                Eating(food);
+                FoodBowlInPercent -= 15;
+            }
+            else
+            {
+                Console.WriteLine("наполни мою миску!");
+            }
         }
         else
         {
@@ -47,17 +55,14 @@ public class PenguinAnimal : AbstractAnimal
             IsSatisfied = false;
         }
     }
-
     public override void DoSound()
     {
         Console.WriteLine($"{Name} издал {Sound}");
     }
-
     public override void Play()
     {
         Console.WriteLine($"{Name} поиграл");
     }
-
     public override void PlayWithRelatives(string relative)
     {
         Console.WriteLine($"{Name} поиграл с {relative}");

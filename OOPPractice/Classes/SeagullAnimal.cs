@@ -7,19 +7,18 @@ public class SeagullAnimal : AbstractAnimal
         Name = name;
         Biome = "ледник";
         Type = "чайка";
-        Square = "20 метров^2";
+        Square = 20;
         IsSatisfied = false;
         Sound = "кар-кар";
         IsPredator = true;
         Food = "мясо или рыба";
         Possibility = "умеет преодолевать сильный ветер, пролетать большие расстояния";
+        FoodBowlInPercent = 100;
     }
-
     public override void DoSound()
     {
         Console.WriteLine($"{Name} издал {Sound}");
     }
-
     protected override void Eating(string food)
     {
         Random rnd = new Random();
@@ -35,7 +34,6 @@ public class SeagullAnimal : AbstractAnimal
             Console.WriteLine($"{Name}: Покорми меня ещё, я сыт на {SatisfiedInPercent}%");
         }
     }
-    
     public override void GetEat(string food)
     {
         if (food == "фрукты")
@@ -45,7 +43,15 @@ public class SeagullAnimal : AbstractAnimal
         }
         else if (food == "мясо" || food == "рыба" || food == "рыба и мясо" || food == "мясо и рыба")
         {
-            Eating(food);
+            if (FoodBowlInPercent > 15)
+            {
+                Eating(food);
+                FoodBowlInPercent -= 15;
+            }
+            else
+            {
+                Console.WriteLine("наполни мою миску!");
+            }
         }
         else
         {
@@ -53,12 +59,10 @@ public class SeagullAnimal : AbstractAnimal
             IsSatisfied = false;
         }
     }
-
     public override void Play()
     {
         Console.WriteLine($"{Name} поиграл");
     }
-
     public override void PlayWithRelatives(string relative)
     {
         Console.WriteLine($"{Name} поиграл с {relative}");

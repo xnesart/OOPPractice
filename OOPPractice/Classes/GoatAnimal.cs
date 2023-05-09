@@ -7,12 +7,13 @@ public class GoatAnimal : AbstractAnimal
         Name = name;
         Biome = "джунгли";
         Type = "коза";
-        Square = "20 метров^2";
+        Square = 20;
         IsSatisfied = false;
         Sound = "мееее";
         IsPredator = false;
         Food = "растения или фрукты";
         Possibility = "умеет предупреждать сородичей об опасности, меняя тон крика";
+        FoodBowlInPercent = 100;
     }
 
     protected override void Eating(string food)
@@ -40,7 +41,15 @@ public class GoatAnimal : AbstractAnimal
         }
         else if (food == "фрукты" || food == "растения")
         {
-           Eating(food);
+            if (FoodBowlInPercent > 15)
+            {
+                Eating(food);
+                FoodBowlInPercent -= 15;
+            }
+            else
+            {
+                Console.WriteLine("наполни мою миску!");
+            }
         }
         else
         {
@@ -48,17 +57,14 @@ public class GoatAnimal : AbstractAnimal
             IsSatisfied = false;
         }
     }
-
     public override void DoSound()
     {
         Console.WriteLine($"{Name} издала {Sound}");
     }
-
     public override void Play()
     {
         Console.WriteLine($"{Name} поиграл");
     }
-
     public override void PlayWithRelatives(string relative)
     {
         Console.WriteLine($"{Name} поиграл с {relative}");

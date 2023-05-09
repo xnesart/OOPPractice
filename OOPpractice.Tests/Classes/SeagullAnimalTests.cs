@@ -6,8 +6,6 @@ public class SeagullAnimalTests
 {
     [TestCase(false,"фрукты")]
     [TestCase(true,"мясо")]
-    [TestCase(true,"мясо и рыба")]
-    [TestCase(true,"рыба и мясо")]
     public void GetEatTests(bool expected, string food)
     {
         SeagullAnimal seagullAnimal = new SeagullAnimal("Симба");

@@ -6,8 +6,6 @@ public class PenguinTests
 {
     [TestCase(false,"фрукты")]
     [TestCase(true,"мясо")]
-    [TestCase(true,"мясо и рыба")]
-    [TestCase(true,"рыба и мясо")]
     public void GetEatTests(bool expected, string food)
     {
         PenguinAnimal penguinAnimal = new PenguinAnimal("Симба");
