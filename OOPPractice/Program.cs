@@ -28,43 +28,44 @@ elefantAnimal.GetEat("фрукты");
  aviaryDesertHerbivore.AnimalsDoSound();
  aviaryDesertHerbivore.DoAction("Тимоша", "ходить");
 
- //
- //
- // Aviary aviaryJunglePredators = new Aviary("тропический вольер","джунгли",100, true);
- // aviaryJunglePredators.AddAnimalInAviary(new TigerAnimal("Пима"));
- // aviaryJunglePredators.AddAnimalInAviary(new TigerAnimal("Сима"));
- // aviaryJunglePredators.ShowAnimals();
- // aviaryJunglePredators.CheckAnimalSatisfied(); 
- // aviaryJunglePredators.AnimalsFeedInAviary("мясо");
- // aviaryJunglePredators.CheckAnimalSatisfied();
- // aviaryJunglePredators.AnimalsDoSound();
- //
- // Aviary aviaryJungleHerbivore = new Aviary("тропический вольер","джунгли",100, false);
- // aviaryJungleHerbivore.AddAnimalInAviary(new SlothAnimal("Ленивц"));
- // aviaryJungleHerbivore.AddAnimalInAviary(new SlothAnimal("Семён"));
- // aviaryJungleHerbivore.AddAnimalInAviary(new GoatAnimal("Козовская"));
- // aviaryJungleHerbivore.ShowAnimals();
- // aviaryJungleHerbivore.CheckAnimalSatisfied(); 
- // aviaryJungleHerbivore.AnimalsFeedInAviary("фрукты");
- // aviaryJungleHerbivore.CheckAnimalSatisfied();
- // aviaryJungleHerbivore.AnimalsDoSound();
- //
- //
- // Aviary aviaryGlacier = new Aviary("холодный вольер", "ледник", 100, true);
- // aviaryGlacier.AddAnimalInAviary(new SeagullAnimal("Чайковская"));
- // aviaryGlacier.AddAnimalInAviary(new SeagullAnimal("Чайковская2"));
- // aviaryGlacier.AddAnimalInAviary(new SeagullAnimal("Чайковская3"));
- // aviaryGlacier.AddAnimalInAviary(new SeagullAnimal("Чайковская4"));
- // aviaryGlacier.AddAnimalInAviary(new SeagullAnimal("Чайковская5"));
- // aviaryGlacier.AddAnimalInAviary(new SeagullAnimal("Чайковская6"));
- //
- // aviaryGlacier.AddAnimalInAviary(new PenguinAnimal("Пингивнский"));
- // aviaryGlacier.ShowAnimals();
- // aviaryGlacier.CheckAnimalSatisfied();
- // aviaryGlacier.AnimalsFeedInAviary("рыба и мясо");
- // aviaryGlacier.ShowFreeSquare();
- // aviaryGlacier.RemoveAnimalInAviary("Чайковская", "чайка");
- // aviaryGlacier.ShowFreeSquare();
+
+ 
+ 
+ Aviary aviaryJunglePredators = new Aviary("тропический вольер","джунгли",100, true);
+ aviaryJunglePredators.AddAnimalInAviary(new TigerAnimal("Пима"));
+ aviaryJunglePredators.AddAnimalInAviary(new TigerAnimal("Сима"));
+ aviaryJunglePredators.ShowAnimals();
+ aviaryJunglePredators.CheckAnimalSatisfied(); 
+ aviaryJunglePredators.AnimalsFeedInAviary("мясо");
+ aviaryJunglePredators.CheckAnimalSatisfied();
+ aviaryJunglePredators.AnimalsDoSound();
+ 
+ Aviary aviaryJungleHerbivore = new Aviary("тропический вольер","джунгли",100, false);
+ aviaryJungleHerbivore.AddAnimalInAviary(new SlothAnimal("Ленивц"));
+ aviaryJungleHerbivore.AddAnimalInAviary(new SlothAnimal("Семён"));
+ aviaryJungleHerbivore.AddAnimalInAviary(new GoatAnimal("Козовская"));
+ aviaryJungleHerbivore.ShowAnimals();
+ aviaryJungleHerbivore.CheckAnimalSatisfied(); 
+ aviaryJungleHerbivore.AnimalsFeedInAviary("фрукты");
+ aviaryJungleHerbivore.CheckAnimalSatisfied();
+ aviaryJungleHerbivore.AnimalsDoSound();
+ 
+ 
+ Aviary aviaryGlacier = new Aviary("холодный вольер", "ледник", 100, true);
+ aviaryGlacier.AddAnimalInAviary(new SeagullAnimal("Чайковская"));
+ aviaryGlacier.AddAnimalInAviary(new SeagullAnimal("Чайковская2"));
+ aviaryGlacier.AddAnimalInAviary(new SeagullAnimal("Чайковская3"));
+ aviaryGlacier.AddAnimalInAviary(new SeagullAnimal("Чайковская4"));
+ aviaryGlacier.AddAnimalInAviary(new SeagullAnimal("Чайковская5"));
+ aviaryGlacier.AddAnimalInAviary(new SeagullAnimal("Чайковская6"));
+ 
+ aviaryGlacier.AddAnimalInAviary(new PenguinAnimal("Пингивнский"));
+ aviaryGlacier.ShowAnimals();
+ aviaryGlacier.CheckAnimalSatisfied();
+ aviaryGlacier.AnimalsFeedInAviary("рыба и мясо");
+ aviaryGlacier.ShowFreeSquare();
+ aviaryGlacier.RemoveAnimalInAviary("Чайковская", "чайка");
+ aviaryGlacier.ShowFreeSquare();
 
 
 Console.Read();
