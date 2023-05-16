@@ -1,3 +1,5 @@
+using OOPPractice.Interfaces;
+
 namespace OOPPractice.Classes;
 
 public class Aviary
@@ -146,6 +148,17 @@ public class Aviary
         for (int i = 0; i < Animals.Count; i++)
         {
             Animals[i].FoodBowlInPercent = 100;
+        }
+    }
+
+    public void DoAction(string name, string action)
+    {
+        for (int i = 0; i < Animals.Count; i++)
+        {
+            if (Animals[i].Name == name)
+            {
+                Animals[i].DoSpecialAction(action);  
+            }
         }
     }
 }

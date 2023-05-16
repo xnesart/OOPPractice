@@ -1,6 +1,8 @@
+using OOPPractice.Interfaces;
+
 namespace OOPPractice.Classes;
 
-public class SlothAnimal : AbstractAnimal
+public class SlothAnimal : AbstractAnimal, IWalker
 {
     public SlothAnimal(string name)
     {
@@ -14,6 +16,8 @@ public class SlothAnimal : AbstractAnimal
         Food = "растения или фрукты";
         Possibility = "умеет экономить ресурсы и распределять задачи";
         FoodBowlInPercent = 100;
+        SpecialAction = "может ходить";
+
     }
     protected override void Eating(string food)
     {
@@ -66,5 +70,9 @@ public class SlothAnimal : AbstractAnimal
     public override void PlayWithRelatives(string relative)
     {
         Console.WriteLine($"{Name} поиграл с {relative}");
+    }
+    public void Walk()
+    {
+        Console.WriteLine($"{Name} походил");
     }
 }

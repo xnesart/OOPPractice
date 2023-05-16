@@ -1,6 +1,6 @@
 namespace OOPPractice.Classes;
 
-public class ElefantAnimal : AbstractAnimal
+public class ElefantAnimal : AbstractAnimal, IWalker
 {
     public ElefantAnimal(string name)
     {
@@ -14,8 +14,9 @@ public class ElefantAnimal : AbstractAnimal
         Food = "растения или фрукты";
         Possibility = "умеет дружить";
         FoodBowlInPercent = 100;
+        SpecialAction = "может ходить";
+        
     }
-
     protected override void Eating(string food)
     {
         
@@ -32,7 +33,6 @@ public class ElefantAnimal : AbstractAnimal
             Console.WriteLine($"{Name}: Покорми меня ещё, я сыт на {SatisfiedInPercent}%");
         }
     }
-
     public override void DoSound()
     {
         Console.WriteLine($"{Name} издал {Sound}");
@@ -69,5 +69,9 @@ public class ElefantAnimal : AbstractAnimal
     public override void PlayWithRelatives(string relative)
     {
         Console.WriteLine($"{Name} поиграл с {relative}");
+    }
+    public void Walk()
+    {
+        Console.WriteLine($"{Name} походил");
     }
 }

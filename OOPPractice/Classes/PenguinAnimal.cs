@@ -1,6 +1,6 @@
 namespace OOPPractice.Classes;
 
-public class PenguinAnimal : AbstractAnimal
+public class PenguinAnimal : AbstractAnimal, IWalker
 {
     public PenguinAnimal(string name)
     {
@@ -14,6 +14,7 @@ public class PenguinAnimal : AbstractAnimal
         Food = "мясо или рыба";
         Possibility = "умеет различать слова, состоящие из 2х-3х слогов";
         FoodBowlInPercent = 100;
+        SpecialAction = "может ходить";
     }
     protected override void Eating(string food)
     {
@@ -66,5 +67,10 @@ public class PenguinAnimal : AbstractAnimal
     public override void PlayWithRelatives(string relative)
     {
         Console.WriteLine($"{Name} поиграл с {relative}");
+    }
+
+    public void Walk()
+    {
+        Console.WriteLine($"{Name} походил");
     }
 }

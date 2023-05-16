@@ -1,6 +1,8 @@
+using OOPPractice.Interfaces;
+
 namespace OOPPractice.Classes;
 
-public class SeagullAnimal : AbstractAnimal
+public class SeagullAnimal : AbstractAnimal, IFlyer
 {
     public SeagullAnimal(string name)
     {
@@ -14,6 +16,7 @@ public class SeagullAnimal : AbstractAnimal
         Food = "мясо или рыба";
         Possibility = "умеет преодолевать сильный ветер, пролетать большие расстояния";
         FoodBowlInPercent = 100;
+        SpecialAction = "может летать";
     }
     public override void DoSound()
     {
@@ -66,5 +69,10 @@ public class SeagullAnimal : AbstractAnimal
     public override void PlayWithRelatives(string relative)
     {
         Console.WriteLine($"{Name} поиграл с {relative}");
+    }
+
+    public void Fly()
+    {
+        Console.WriteLine($"{Name} полетала");
     }
 }

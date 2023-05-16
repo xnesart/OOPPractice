@@ -1,6 +1,6 @@
 namespace OOPPractice.Classes;
 
-public class TigerAnimal : AbstractAnimal
+public class TigerAnimal : AbstractAnimal, IWalker
 {
     public TigerAnimal(string name)
     {
@@ -14,6 +14,7 @@ public class TigerAnimal : AbstractAnimal
         Food = "мясо или рыба";
         Possibility = "крайне активен, хорошо слышит, видит и чует";
         FoodBowlInPercent = 100;
+        SpecialAction = "может ходить";
     }
 
     public override void DoSound()
@@ -71,5 +72,9 @@ public class TigerAnimal : AbstractAnimal
     public override void PlayWithRelatives(string relative)
     {
         Console.WriteLine($"{Name} поиграл с {relative}");
+    }
+    public void Walk()
+    {
+        Console.WriteLine($"{Name} походил");
     }
 }

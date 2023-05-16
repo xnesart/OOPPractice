@@ -1,6 +1,6 @@
 namespace OOPPractice.Classes;
 
-public class GoatAnimal : AbstractAnimal
+public class GoatAnimal : AbstractAnimal, IWalker
 {
     public GoatAnimal(string name)
     {
@@ -14,8 +14,8 @@ public class GoatAnimal : AbstractAnimal
         Food = "растения или фрукты";
         Possibility = "умеет предупреждать сородичей об опасности, меняя тон крика";
         FoodBowlInPercent = 100;
+        SpecialAction = "может ходить";
     }
-
     protected override void Eating(string food)
     {
         Random rnd = new Random();
@@ -31,7 +31,6 @@ public class GoatAnimal : AbstractAnimal
             Console.WriteLine($"{Name}: Покорми меня ещё, я сыт на {SatisfiedInPercent}%");
         }
     }
-    
     public override void GetEat(string food)
     {
         if (food == "мясо" || food == "рыба" || food == "рыба и мясо" || food == "мясо и рыба")
@@ -68,5 +67,9 @@ public class GoatAnimal : AbstractAnimal
     public override void PlayWithRelatives(string relative)
     {
         Console.WriteLine($"{Name} поиграл с {relative}");
+    }
+    public void Walk()
+    {
+        Console.WriteLine($"{Name} походил");
     }
 }
